@@ -39,7 +39,7 @@ canvas.height = canvas.offsetHeight;
 //MEDIA
 
 let birdImage = new Image();
-birdImage.src = "../../dist/img/bird.png";
+birdImage.src = "../dist/img/bird.png";
 let pipeImage = new Image();
 pipeImage.src = "../../dist/img/sprites/pipe-green.png";
 let pipeImageUp = new Image();
