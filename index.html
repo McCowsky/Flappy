@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <title>Flappy</title>
+</head>
+
+<body>
+
+
+    <div class="mainContainer">
+        <div class="mainContainer__canvasContainer" id="canvasContainer">
+            <canvas class="canvas" id="gameBox">
+            </canvas>
+            <div class="hud">
+                <button class="menuButton " id="hudBack" onclick="pause()">Pause</button>
+
+                <h2 class="hud__score" id="scoreBox">
+                </h2>
+
+            </div>
+            <div class="menu visibility" id="menuBox">
+                <button class="menuButton" onclick="start()">Resume</button>
+                <button class="menuButton" onclick="mainMenu()">Main menu</button>
+                <button class="menuButton soundBox" id="soundBox1" onclick="sound()">Sound on</button>
+
+            </div>
+            <div class="mainMenu" id="mainMenu">
+                <h2 class="mainMenu__title">Flappy</h2>
+
+                <div class="mainMenu__scoreContainer visibility" id="menuScoreBox">
+                    <div class="mainMenu__scoreContainer_current">
+                        <h2>Current</h2>
+                        <h2 id="mainMenuCurrent"></h2>
+                    </div>
+                    <div class="mainMenu__scoreContainer_best">
+                        <h2>Best</h2>
+                        <h2 id="mainMenuBest"></h2>
+                    </div>
+                </div>
+                <button class="menuButton" onclick="startOver()">Start</button>
+                <button class="menuButton soundBox" id="soundBox2" onclick="sound()">Sound on</button>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="./dist/js/canvas.js" defer></script>
+</body>
+
+</html>

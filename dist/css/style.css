@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "flappy";
+  src: url(../../dist/ataurus.ttf) format("truetype");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "flappy";
+}
+
+.mainContainer {
+  height: 100%;
+  width: 100%;
+  background-color: #1f2233;
+}
+.mainContainer .mainContainer__canvasContainer {
+  background-image: url("../../dist/img/sprites/background-day.png");
+  background-size: cover;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.mainContainer .mainContainer__canvasContainer .canvas {
+  display: block;
+}
+.mainContainer .mainContainer__canvasContainer .hud {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.mainContainer .mainContainer__canvasContainer .hud .hud__score {
+  font-size: 3em;
+  padding-right: 8px;
+}
+.mainContainer .mainContainer__canvasContainer .menu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.mainContainer .mainContainer__canvasContainer .mainMenu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-image: url("../../dist/img/sprites/background-day.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.mainContainer .mainContainer__canvasContainer .mainMenu .mainMenu__title {
+  font-size: 5em;
+}
+.mainContainer .mainContainer__canvasContainer .mainMenu .mainMenu__scoreContainer {
+  display: flex;
+  gap: 48px;
+  font-size: 2em;
+}
+.mainContainer .mainContainer__canvasContainer .mainMenu .mainMenu__scoreContainer .mainMenu__scoreContainer_current {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainContainer .mainContainer__canvasContainer .mainMenu .mainMenu__scoreContainer .mainMenu__scoreContainer_best {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.visibility {
+  visibility: hidden;
+}
+
+.menuButton {
+  width: 15rem;
+  font-size: 3em;
+  font-weight: 400;
+  padding: 0.1rem 0rem;
+  background-color: #e6611d;
+  color: white;
+  border: 5px solid white;
+  outline: 3px solid black;
+  font-family: "flappy";
+  -webkit-text-stroke: 2px black;
+}
+.menuButton:hover {
+  border-color: black;
+}
+
+@media (min-width: 450px) {
+  .mainContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .mainContainer .mainContainer__canvasContainer {
+    max-width: 450px;
+    max-height: 900px;
+    border: 2px solid black;
+  }
+}/*# sourceMappingURL=style.css.map */
