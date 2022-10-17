@@ -39,14 +39,14 @@ canvas.height = canvas.offsetHeight;
 //MEDIA
 
 let birdImage = new Image();
-birdImage.src = "/dist/img/bird.png";
+birdImage.src = "../img/bird.png";
 let pipeImage = new Image();
-pipeImage.src = "/dist/img/sprites/pipe-green.png";
+pipeImage.src = "../img/sprites/pipe-green.png";
 let pipeImageUp = new Image();
-pipeImageUp.src = "/dist/img/sprites/pipe-green-up.png";
-let hitAudio = new Audio("/dist/audio/hit.ogg");
-let pointAudio = new Audio("/dist/audio/point.ogg");
-let jumpAudio = new Audio("/dist/audio/wing.ogg");
+pipeImageUp.src = "../img/sprites/pipe-green-up.png";
+let hitAudio = new Audio("../audio/hit.ogg");
+let pointAudio = new Audio("../audio/point.ogg");
+let jumpAudio = new Audio("../audio/wing.ogg");
 
 // VARIABLES
 const HIGHSCORE = JSON.parse(localStorage.getItem("highscore") || "[]") || [];
