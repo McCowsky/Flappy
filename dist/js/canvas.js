@@ -114,7 +114,6 @@ gameObjects = [
     new body(true, { x: canvas.offsetWidth, y: 0 }, { x: -2, y: 0 }, { w: 70, h: (canvas.offsetHeight - 185) / 2 }),
     new body(true, { x: canvas.offsetWidth, y: (canvas.offsetHeight * 2) / 3 }, { x: -2, y: 0 }, { w: 70, h: (canvas.offsetHeight - 185) / 2 }),
 ];
-console.log(gameObjects);
 // COLLISION DETECT FUNCTION
 function collisionDetect() {
     let obj1;

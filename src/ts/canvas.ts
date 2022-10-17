@@ -160,7 +160,6 @@ gameObjects = [
   ),
 ];
 
-console.log(gameObjects);
 // COLLISION DETECT FUNCTION
 
 function collisionDetect() {
