@@ -55,55 +55,55 @@ class body {
         this.collision = false;
     }
     update() {
-        switch (this.npc) {
-            case false:
-                this.vel.y += GRAVITY;
-                this.pos.y += this.vel.y;
-                const g = GROUND - this.size.h;
-                if (this.pos.y >= g || this.pos.y <= 0) {
-                    mainMenu();
-                }
-                break;
-            case true:
-                this.pos.x += this.vel.x;
-                if (this.pos.x + 70 <= 0) {
-                    this.reset();
-                }
-                break;
+        if (this.npc) {
+            this.pos.x += this.vel.x;
+            if (this.pos.x + 70 <= 0) {
+                this.reset();
+            }
+        }
+        else {
+            this.vel.y += GRAVITY;
+            this.pos.y += this.vel.y;
+            const g = GROUND - this.size.h;
+            if (this.pos.y >= g || this.pos.y <= 0) {
+                mainMenu();
+            }
         }
     }
     drawbird() {
         if (this.collision)
             mainMenu();
-        if (!this.npc)
-            ctx.drawImage(birdImage, this.pos.x, this.pos.y, this.size.w, this.size.h);
+        if (this.npc)
+            return;
+        ctx.drawImage(birdImage, this.pos.x, this.pos.y, this.size.w, this.size.h);
     }
     drawpipe() {
-        if (this.npc)
-            ctx.drawImage(pipeImage, this.pos.x, this.pos.y, this.size.w, this.size.h);
+        if (!this.npc)
+            return;
+        ctx.drawImage(pipeImage, this.pos.x, this.pos.y, this.size.w, this.size.h);
     }
     drawpipeup() {
-        if (this.npc)
-            ctx.drawImage(pipeImageUp, this.pos.x, this.pos.y, this.size.w, this.size.h);
+        if (!this.npc)
+            return;
+        ctx.drawImage(pipeImageUp, this.pos.x, this.pos.y, this.size.w, this.size.h);
     }
     jump() {
-        if (!this.npc)
-            this.pos.y -= 100;
+        if (this.npc)
+            return;
+        this.pos.y -= 100;
         this.vel.y = 0;
     }
     reset() {
-        switch (this.npc) {
-            case false:
-                this.pos.y = SCREEN_CENTER;
-                break;
-            case true:
-                stopPoint = false;
-                this.pos.x = canvas.offsetWidth;
-                const walls = randomWallHeight();
-                gameObjects[1].size.h = walls[0];
-                gameObjects[2].pos.y = walls[2];
-                gameObjects[2].size.h = walls[1];
-                break;
+        if (this.npc) {
+            stopPoint = false;
+            this.pos.x = canvas.offsetWidth;
+            const walls = randomWallHeight();
+            gameObjects[1].size.h = walls[0];
+            gameObjects[2].pos.y = walls[2];
+            gameObjects[2].size.h = walls[1];
+        }
+        else {
+            this.pos.y = SCREEN_CENTER;
         }
     }
 }
