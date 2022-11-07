@@ -22,9 +22,9 @@ type GameElements = {
   update(): void;
   jump(): void;
   reset(): void;
-  drawbird(): any;
-  drawpipe(): any;
-  drawpipeup(): any;
+  drawbird(): EventListenerObject | any;
+  drawpipe(): EventListenerObject | any;
+  drawpipeup(): EventListenerObject | any;
 };
 
 // CANVAS
