@@ -224,9 +224,15 @@ function animate() {
     pointAdd();
     ctx === null || ctx === void 0 ? void 0 : ctx.clearRect(0, 0, innerWidth, innerHeight);
     for (let i = 0; i < gameObjects.length; i++) {
-        birdImage.addEventListener("load", gameObjects[i].drawbird(), false);
-        pipeImage.addEventListener("load", gameObjects[i].drawpipe(), false);
-        pipeImageUp.addEventListener("load", gameObjects[i].drawpipeup(), false);
+        birdImage.addEventListener("load", () => {
+            gameObjects[i].drawbird();
+        }, false);
+        pipeImage.addEventListener("load", () => {
+            gameObjects[i].drawpipe();
+        }, false);
+        pipeImageUp.addEventListener("load", () => {
+            gameObjects[i].drawpipeup();
+        }, false);
         gameObjects[i].drawbird();
         if (gameObjects[i] === gameObjects[1])
             gameObjects[i].drawpipeup();
